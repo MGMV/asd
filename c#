@@ -1,0 +1,74 @@
+using System;
+using System.Collections.Generic;
+
+namespace Baggage
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int W = Int32.Parse( Console.ReadLine());
+            List<Arrays> list = new List<Arrays>();
+            for (int i = 1; i < W-2; i++)
+            {
+                for (int z = i; z < W-i; z++)
+                {
+                    int C = W - i - z;
+                    //int a=0, b=0, c = 0;
+                    //// I
+                    //if (i < z && i < W)
+                    //    a = i;
+                    //else if (i < z && i > W)
+                    //    b = i;
+                    //else if (i > z && i > W)
+                    //    c = i;
+                    //// Z
+                    //if (z < i && z < W)
+                    //    a = z;
+                    //else if (z < i && z > W)
+                    //    b = z;
+                    //else if (z > i && z > W)
+                    //    c = z;
+                    //if (W < i && W < z)
+                    //    a = W;
+                    //else if (W < i && W > z)
+                    //    b = W;
+                    //else if (W > i && W > z)
+                    //    c = W;
+                    list.Add(new Arrays
+                    {
+                        A = i,
+                        B = z,
+                        C = C
+                    });
+                    // Console.WriteLine("{0} {1} {2}", i, z, C);
+                   
+                }
+            }
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].A > list[i].B)
+                {
+                    int z = list[i].A;
+                    list[i].A = list[i].B;
+                    list[i].B = z;
+                }
+                else if(list[i])
+            }
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine(list[i].A + " " + list[i].B + " " + list[i].C);
+            }
+
+        }
+        
+    }
+
+   
+    class Arrays
+    {
+        public int A { get; set; }
+        public int B { get; set; }
+        public int C { get; set; }
+    }
+}
